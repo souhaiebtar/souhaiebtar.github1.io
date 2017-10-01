@@ -1,6 +1,7 @@
 ---
 title: install parallels tools on centos 7
 layout: post
+img: parallels-tools-centos.png
 ---
 
 after installing centos 7 (for testing purposes) on Parallels desktop, i run into a problem, parallels tools won't install either using gui or terminal,
