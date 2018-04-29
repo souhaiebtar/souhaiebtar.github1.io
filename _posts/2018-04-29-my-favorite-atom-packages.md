@@ -98,4 +98,4 @@ back than i was amazed by how far web technology has gone (we can think *Google*
 87. Seri-icons
 88. Tree-view-git-branch
 
-[!list-of-packages](atom-packages.png)
+![list-of-packages](atom-packages.png)
