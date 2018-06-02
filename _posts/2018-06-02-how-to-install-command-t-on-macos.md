@@ -63,5 +63,5 @@ Now, you should be able to run vim and use command-t plugin without problem,
 
 **N.B:**
  to use command to
-use[1][1]
+use
 ` <leader> t` (in vim, by default <leader> is the `\` character)
