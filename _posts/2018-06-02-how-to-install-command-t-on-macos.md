@@ -1,6 +1,7 @@
 ---
 title: Install vim with ruby enabled, install command-t
 layout: post
+img: vim.png
 ---
 # History:
 i like to test, tweak and customize thing to feet my need, one of this thing is vim, i can't even describe how much this editor is great and how much it's helpful, simply it's stupid not use it (or at least something similar, **emacs** maybe)
