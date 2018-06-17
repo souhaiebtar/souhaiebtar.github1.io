@@ -1,0 +1,50 @@
+---
+title: Install and configure go 1.10 than install open snitch
+layout: post
+img: vim.png
+---
+___
+### Install go and config [1][1] [2][2]
+
+1. install go
+```SHELL
+sudo add-apt-repository ppa:gophers/archive
+sudo apt update
+sudo apt-get install golang-1.10-go
+```
+
+2. setting go paths
+```SHELL
+echo "#config goroot and gopath"$'\n'"export GOROOT=/usr/lib/go-1.10"$'\n'"export PATH=\$PATH:\$GOROOT/bin"$'\n'"export GOPATH=\$HOME/go"$'\n'"export PATH=\$PATH:\$GOPATH/bin" >> ~/.profile
+```
+___
+
+#### Install opensnitch [3][3]
+
+1. Install dependecies
+```SHELL
+# install dependencies
+sudo apt-get install protobuf-compiler libpcap-dev libnetfilter-queue-dev python3-pip
+go get github.com/golang/protobuf/protoc-gen-go
+go get -u github.com/golang/dep/cmd/dep
+python3 -m pip install --user grpcio-tools
+# clone the repository (ignore the message about no Go files being found)
+go get github.com/evilsocket/opensnitch
+cd $GOPATH/src/github.com/evilsocket/opensnitch
+# compile && install
+make
+sudo make install
+# enable opensnitchd as a systemd service and start the UI
+sudo systemctl enable opensnitchd
+sudo service opensnitchd start
+cd $GOPATH/src/github.com/evilsocket/opensnitch/ui
+cp opensnitch_ui.desktop ~/.config/autostart/
+
+```
+
+
+
+[1]: https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
+[2]: https://www.samclarke.com/installing-go-1-9-on-ubuntu-16-04/
+
+[3]: https://github.com/evilsocket/opensnitch
